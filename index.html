@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Formas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo de Formas</h1>
+        <div class="instruction" id="instruction">Clique no Círculo! Tempo restante: 30s</div>
+        <div class="game-area">
+            <div id="circle" class="shape circle" onclick="onShapeClick('Círculo')"></div>
+            <div id="square" class="shape square" onclick="onShapeClick('Quadrado')"></div>
+            <div id="star" class="shape star" onclick="onShapeClick('Estrela')"></div>
+            <div id="triangle" class="shape triangle" onclick="onShapeClick('Triângulo')"></div>
+            <div id="rectangle" class="shape rectangle" onclick="onShapeClick('Retângulo')"></div>
+            <div id="oval" class="shape oval" onclick="onShapeClick('Oval')"></div>
+            <div id="heart" class="shape heart" onclick="onShapeClick('Coração')"></div>
+        </div>
+    
+        <div class="score-area">
+            <h2>Pontuação: <span id="score">0</span></h2>
+        </div>
+        <button class="reset-button" onclick="resetGame()">Reiniciar Jogo</button>
+    </div>
+    <!-- HTML atualizado para exibir os balões -->
+<div style="text-align: center; margin-top: 100px;">
+    <h1 style="font-size: 48px; color: #4CAF50;">Você venceu! Parabéns!</h1>
+    <div id="balloons-container" class="balloons-container">
+        <div class="balloon" style="left: 10%;"></div>
+        <div class="balloon" style="left: 30%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 70%;"></div>
+        <div class="balloon" style="left: 90%;"></div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

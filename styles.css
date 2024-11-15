@@ -1,0 +1,239 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #F0F8FF;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.instruction {
+    font-size: 28px;
+    color: #FF6347;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.game-area {
+    position: relative;
+    height: 400px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 3px dashed #FF6347;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Animação de movimento */
+}
+
+.circle {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.square {
+    background-color: blue;
+}
+
+.star {
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid green;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rectangle {
+    width: 150px;
+    height: 80px;
+    background-color: purple;
+    position: absolute; /* Garante que o retângulo não se sobreponha */
+}
+
+.oval {
+    display: block; /* Garante que seja tratado como um elemento de bloco */
+    width: 150px; /* Define a largura do oval */
+    height: 80px; /* Define a altura do oval */
+    background-color: orange; /* Cor de fundo */
+    border-radius: 75px / 50%; /* Define o formato oval explicitamente */
+    position: absolute; /* Para movimentação */
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 75%, 20% 100%, 0% 35%);
+    transform: rotate(-45deg); /* Gira o coração para que fique na posição certa */
+}
+
+
+.shape:hover {
+    transform: scale(1.1);
+    border: 3px solid #4CAF50;
+}
+
+.score-area {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+/* CSS atualizado para os balões */
+.balloons-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.balloon {
+    width: 50px;
+    height: 80px;
+    background-color: #FF6347; /* Cor do balão */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: balloonRise 4s ease-in-out infinite;
+}
+
+@keyframes balloonRise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-300px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+}
+
+/* Cria cores aleatórias para os balões */
+/* Estilos para o container dos balões */
+.balloons-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Estilos para o balão */
+.balloon {
+    width: 50px;
+    height: 80px;
+    background-color: #FF6347; /* Cor do balão */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: balloonRise 4s ease-in-out infinite;
+}
+
+/* Fitas dos balões */
+.balloon::after {
+    content: "";
+    width: 3px; /* Largura da fita */
+    height: 100px; /* Tamanho da fita */
+    background-color: #8B4513; /* Cor da fita, pode ser ajustada */
+    position: absolute;
+    bottom: -100px; /* Posiciona a fita abaixo do balão */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a fita */
+}
+
+/* Animação dos balões subindo */
+@keyframes balloonRise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-300px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+}
+
+/* Estilos para cada balão com cores diferentes e delays */
+.balloon:nth-child(1) {
+    background-color: #FF6347; /* Vermelho */
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    background-color: #32CD32; /* Verde */
+    animation-delay: 0.5s;
+}
+
+.balloon:nth-child(3) {
+    background-color: #1E90FF; /* Azul */
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(4) {
+    background-color: #FFD700; /* Amarelo */
+    animation-delay: 1.5s;
+}
+
+.balloon:nth-child(5) {
+    background-color: #FF69B4; /* Rosa */
+    animation-delay: 2s;
+}
+
+
+.reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #45A049;
+}
